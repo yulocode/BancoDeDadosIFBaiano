@@ -1,44 +1,59 @@
-CREATE TABLE Funcionario 
+CREATE TABLE Empregados 
 ( 
  Nome INT,  
- CPF INT PRIMARY KEY,  
- Cargo INT,  
- idEmpresa INT,  
- idDepartamento INT,  
+ CPF INT,  
+ ID INT PRIMARY KEY,  
+ Matrícula INT,  
+); 
+
+CREATE TABLE Secretárias 
+( 
+ Nome INT,  
+ Matrícula INT,  
+ CPF INT,  
+ ID INT PRIMARY KEY,  
+); 
+
+CREATE TABLE Motoristas 
+( 
+ Nome INT,  
+ CPF INT,  
+ Nome INT,  
+ ID INT PRIMARY KEY,  
+ N° Da CNH INT,  
+ Matrícula INT,  
+); 
+
+CREATE TABLE Eng. 
+( 
+ CREA INT,  
+ CPF INT,  
+ Nome INT,  
+ ID INT PRIMARY KEY,  
+ Matrícula INT,  
 ); 
 
 CREATE TABLE Departamento 
 ( 
- Prédio INT,  
+ ID INT PRIMARY KEY,  
  Nome INT,  
 ); 
 
-CREATE TABLE Projeto 
+CREATE TABLE Ramos Da Eng. 
 ( 
- idCliente INT,  
- idEmpresa INT,  
+ ID INT PRIMARY KEY,
+ Nome CHAR
 ); 
 
-CREATE TABLE Cliente 
+CREATE TABLE Processadores de Texto 
 ( 
- CNPJ INT PRIMARY KEY,  
+ ID INT PRIMARY KEY,  
  Nome INT,  
- Telefone INT,  
 ); 
 
-CREATE TABLE Empresa 
+CREATE TABLE Projetos 
 ( 
+ Nome INT,  
+ ID INT PRIMARY KEY,  
 ); 
 
-CREATE TABLE Alocacao 
-( 
- idEmpresa INT PRIMARY KEY,  
- idDepartamento INT,  
-); 
-
-ALTER TABLE Funcionário ADD FOREIGN KEY(idEmpresa) REFERENCES Empresa (idEmpresa)
-ALTER TABLE Funcionário ADD FOREIGN KEY(idDepartamento) REFERENCES Departamento (idDepartamento)
-ALTER TABLE Projeto ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)
-ALTER TABLE Projeto ADD FOREIGN KEY(idEmpresa) REFERENCES Empresa (idEmpresa)
-ALTER TABLE Alocação ADD FOREIGN KEY(idEmpresa) REFERENCES Empresa (idEmpresa)
-ALTER TABLE Alocação ADD FOREIGN KEY(idDepartamento) REFERENCES Departamento (idDepartamento)
