@@ -1,4 +1,4 @@
-CREATE TABLE Funcionário 
+CREATE TABLE Funcionario 
 ( 
  Nome INT,  
  CPF INT PRIMARY KEY,  
@@ -30,7 +30,7 @@ CREATE TABLE Empresa
 ( 
 ); 
 
-CREATE TABLE Alocação 
+CREATE TABLE Alocacao 
 ( 
  idEmpresa INT PRIMARY KEY,  
  idDepartamento INT,  
